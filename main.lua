@@ -2,7 +2,7 @@ function love.load()
 
   anim8 = require("lib/anim8")
 
-  success = love.graphics.setMode(800, 600)
+  success = love.window.setMode(800, 600)
 
   -- images
   imgBackground = love.graphics.newImage("data/bg.png")
@@ -268,9 +268,9 @@ function love.draw(dt)
     mice[i].anim:draw(spriteAnimals, mice[i].pos[1], mice[i].pos[2])
     --  alarm
     if mice[i].status == "spotted" then
-      love.graphics.drawq(spriteAlert, alertYellow, mice[i].pos[1], mice[i].pos[2] - 32 )
+      love.graphics.draw(spriteAlert, alertYellow, mice[i].pos[1], mice[i].pos[2] - 32 )
     elseif mice[i].status == "alarmed" then
-      love.graphics.drawq(spriteAlert, alertRed, mice[i].pos[1], mice[i].pos[2] - 32 )
+      love.graphics.draw(spriteAlert, alertRed, mice[i].pos[1], mice[i].pos[2] - 32 )
     end
   end
 
